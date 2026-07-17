@@ -1,5 +1,13 @@
 ﻿const thoughtsData = [
   {
+    id: 7,
+    type: "video",
+    title: "码上飞公司分析与AI Agent商业潜力",
+    summary: "站在投研视角分析码上飞公司：在Agent时代，创业公司避开C端入口之争，沉淀中后端能力——自然语言驱动的选品、定价、展示、物流、售后全链路。对商户是低成本试错的新获客入口，对掌握入口的大厂而言运营密度是护城河。",
+    embedUrl: "https://player.bilibili.com/player.html?bvid=BV1yxNR6rEJz",
+    date: "2025-07"
+  },
+  {
     id: 1,
     type: "article",
     title: "AI产品经理的思考框架：从技术理解到商业闭环",
