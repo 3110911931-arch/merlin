@@ -166,3 +166,26 @@ footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--bor
 @media (max-width: 480px) {
   .hero h1 { font-size: 30px; }
 }
+
+/* ---- Skills & Competency ---- */
+.skills-section { margin-top: 36px; }
+.skills-section .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.skills-section h3 { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.competency-item { margin-bottom: 14px; }
+.competency-label { font-size: 14px; color: var(--text-secondary); margin-bottom: 6px; font-weight: 500; }
+.competency-bar-bg { width: 100%; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+.competency-bar { height: 100%; background: var(--primary); border-radius: 4px; transition: width 0.8s ease; }
+.tool-category-label { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-top: 16px; margin-bottom: 8px; }
+.tool-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tool-tag { font-size: 12px; padding: 4px 12px; background: var(--white); border: 1px solid var(--border); border-radius: 14px; color: var(--text-secondary); font-weight: 500; }
+.domain-list { display: flex; flex-direction: column; gap: 10px; }
+.domain-item { font-size: 14px; color: var(--text-secondary); display: flex; align-items: center; gap: 10px; }
+.domain-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: rgba(59,130,246,0.08); border-radius: 8px; font-size: 16px; flex-shrink: 0; }
+.personal-assets { padding: 24px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); }
+.personal-assets h3 { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.asset-item { margin-bottom: 12px; }
+.asset-label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+.asset-value { font-size: 14px; color: var(--accent); }
+.asset-text { font-size: 14px; color: var(--text-secondary); }
+.hero-tags { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.hero-tag { font-size: 14px; font-weight: 500; color: var(--accent); background: rgba(59,130,246,0.08); padding: 4px 14px; border-radius: 16px; letter-spacing: 0.3px; }

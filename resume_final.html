@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>马林 (Merlin) - 简历</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        @page {
+            size: A4;
+            margin: 15mm 12mm;
+            background-color: #ffffff;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333333;
+            font-size: 9.5pt;
+            line-height: 1.5;
+        }
+        
+        /* Header section */
+        .header {
+            width: 100%;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .header-left {
+            width: 70%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .header-right {
+            width: 28%;
+            display: inline-block;
+            vertical-align: top;
+            text-align: right;
+        }
+        .name-container {
+            margin-bottom: 5px;
+        }
+        .name {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #0d3b66;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .english-name {
+            font-size: 14pt;
+            color: #4a90e2;
+            display: inline-block;
+            font-weight: normal;
+        }
+        .title {
+            font-size: 13pt;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 8px;
+        }
+        .tags {
+            font-size: 9pt;
+            color: #4a90e2;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .tags span {
+            margin-right: 8px;
+        }
+        .summary {
+            font-size: 9pt;
+            color: #666666;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            padding-right: 15px;
+        }
+        .contact-info {
+            font-size: 8.5pt;
+            color: #444444;
+        }
+        .contact-item {
+            display: inline-block;
+            margin-right: 12px;
+            margin-bottom: 5px;
+        }
+        
+        /* Main Layout using layout table */
+        .main-container {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .left-col {
+            width: 68%;
+            vertical-align: top;
+            padding-right: 20px;
+        }
+        .right-col {
+            width: 32%;
+            vertical-align: top;
+            background-color: #f4f7fa;
+            padding: 15px 12px;
+            border-radius: 6px;
+        }
+        
+        /* Section styling */
+        .section-title {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #0d3b66;
+            border-bottom: 2px solid #0d3b66;
+            padding-bottom: 4px;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .left-col .section-title {
+            margin-top: 15px;
+        }
+        
+        /* Job Experience */
+        .job-item {
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+        }
+        .job-header {
+            font-weight: bold;
+            font-size: 10pt;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        .job-sub-header {
+            color: #666;
+            font-size: 9pt;
+            margin-bottom: 6px;
+        }
+        .job-time-loc {
+            float: right;
+            font-weight: normal;
+            color: #666;
+        }
+        .job-desc {
+            margin: 0;
+            padding-left: 15px;
+            font-size: 9pt;
+            color: #444;
+        }
+        .job-desc li {
+            margin-bottom: 5px;
+            text-align: justify;
+        }
+        .highlight-blue {
+            color: #1a73e8;
+            font-weight: bold;
+        }
+        
+        /* Projects Grid */
+        .project-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 8px;
+            margin-left: -8px;
+        }
+        .project-card {
+            width: 33.33%;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-top: 3px solid #1a73e8;
+            padding: 8px;
+            vertical-align: top;
+            border-radius: 4px;
+            font-size: 8pt;
+        }
+        .project-card-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
+        .project-card-time {
+            color: #888;
+            font-size: 7.5pt;
+            margin-bottom: 6px;
+        }
+        .project-card-desc {
+            margin: 0;
+            padding-left: 10px;
+            color: #555;
+        }
+        .project-card-desc li {
+            margin-bottom: 3px;
+        }
+        
+        /* Education */
+        .edu-item {
+            font-size: 9pt;
+            color: #333;
+        }
+        .edu-row {
+            margin-bottom: 4px;
+        }
+        
+        /* Right Column specific styling */
+        .right-section-title {
+            font-size: 10.5pt;
+            font-weight: bold;
+            color: #0d3b66;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 4px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .right-section-title:first-child {
+            margin-top: 0;
+        }
+        
+        /* Competency bar chart style */
+        .competency-item {
+            margin-bottom: 8px;
+            font-size: 8.5pt;
+        }
+        .competency-label {
+            display: inline-block;
+            width: 55%;
+            color: #444;
+            vertical-align: middle;
+        }
+        .competency-bar-container {
+            display: inline-block;
+            width: 42%;
+            height: 6px;
+            background-color: #e2e8f0;
+            border-radius: 3px;
+            vertical-align: middle;
+        }
+        .competency-bar {
+            height: 100%;
+            background-color: #0d3b66;
+            border-radius: 3px;
+        }
+        
+        /* Tags / Badges for Tools */
+        .tool-tag {
+            display: inline-block;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 8pt;
+            margin-right: 4px;
+            margin-bottom: 6px;
+        }
+        .tool-category {
+            font-size: 8.5pt;
+            font-weight: bold;
+            color: #334155;
+            margin-top: 6px;
+            margin-bottom: 4px;
+        }
+        
+        /* Industry Domain List */
+        .domain-item {
+            font-size: 8.5pt;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+        .domain-icon {
+            display: inline-block;
+            width: 16px;
+            text-align: center;
+            margin-right: 6px;
+            color: #0d3b66;
+        }
+        
+        /* Personal Assets */
+        .asset-item {
+            font-size: 8.5pt;
+            color: #334155;
+            margin-bottom: 8px;
+            word-break: break-all;
+        }
+        .asset-label {
+            font-weight: bold;
+            color: #475569;
+            margin-bottom: 2px;
+        }
+        .asset-value {
+            color: #1a73e8;
+        }
+        .asset-text {
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <div class="header-left">
+            <div class="name-container">
+                <div class="name">马林</div>
+                <div class="english-name">(Merlin)</div>
+            </div>
+            <div class="title">AI Solution Manager</div>
+            <div class="tags">
+                <span>AI Product</span> | <span>Industry Research</span> | <span>Enterprise AI</span> | <span>Smart Mobility</span>
+            </div>
+            <div class="summary">
+                6年AI产业经验，聚焦计算机视觉、3D视觉及智能汽车等领域，具备从技术理解、产品规划、方案设计到商业落地的完整闭环经验，擅长复杂AI产品与解决方案的商业化落地，驱动客户价值与业务增长。
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">📞 152 0929 3396</div>
+                <div class="contact-item">✉️ 3110911931@qq.com</div>
+                <div class="contact-item">📍 深圳</div>
+                <div class="contact-item">📅 1997年</div>
+                <div class="contact-item">👤 汉族</div>
+            </div>
+        </div>
+        <div class="header-right">
+            <div style="width: 95px; height: 120px; background-color: #e2e8f0; display: inline-block; border-radius: 4px; text-align: center; line-height: 120px; color: #718096; font-size: 10pt; font-weight: bold; border: 1px solid #cbd5e1;">照片头像</div>
+        </div>
+    </div>
+
+    <!-- Main Content Table Layout -->
+    <table class="main-container">
+        <tr>
+            <!-- Left Column -->
+            <td class="left-col">
+                
+                <div class="section-title">💼 工作经历 WORK EXPERIENCE</div>
+                
+                <!-- Job 1 -->
+                <div class="job-item">
+                    <div class="job-header">
+                        比亚迪汽车工业有限公司
+                        <span class="job-time-loc">2024.02 - 至今 &nbsp; 深圳</span>
+                    </div>
+                    <div class="job-sub-header">高级产品经理 | 智驾泊车产品线 | 汽车新技术研究院</div>
+                    <ul class="job-desc">
+                        <li>主责 <span class="highlight-blue">9款车型</span>智驾泊车功能交付验收及问题闭环落地，覆盖海豹06 DM-i（天神之眼C首发）、海狮07（大疆&Momenta合作首发）、腾势N7（Momenta智驾大模型首发）、腾势D9（Momenta-OrinX能力规模MPV首发）等重点车型；支撑秦L天神之眼C验收、仰望U8多个版本验收，并完成问界M9、深蓝S07等竞品对标分析。</li>
+                        <li>主导比亚迪&大疆（卓驭）首发车型海狮07智驾交付攻坚，2月入职，3月初介入主责，3月底达成 <span class="highlight-blue">330节点SOP</span>，保障整车量产节奏；推动多鱼眼时序感知策略上线，多场景泊车路径规划优化、极度车速控制及避障策略等多项关键能力落地。</li>
+                        <li>负责无人机远距迭代客泊车POC产品规划及内外部方案敲定，推动公司创新方案验证与落地。</li>
+                        <li>主导智驾极致成本战略规划，调研并拆解特斯拉、华为、小鹏、小米、宝骏、大众、极氪、蔚来、理想、长安等 <span class="highlight-blue">10+主流方案</span>，从视觉传感器、SOC、MCU、算法方案等维度进行对比分析，输出初版极致成本方案，为公司智驾普及及路线提供决策支撑。</li>
+                    </ul>
+                </div>
+                
+                <!-- Job 2 -->
+                <div class="job-item">
+                    <div class="job-header">
+                        奥比中光科技集团股份有限公司
+                        <span class="job-time-loc">2022.09 - 2023.12 &nbsp; 深圳</span>
+                    </div>
+                    <div class="job-sub-header">软件产品经理 | 智能视觉事业群-视觉生态产品线</div>
+                    <ul class="job-desc">
+                        <li>负责 <span class="highlight-blue">3D人体重建、人体骨骼识别、3D人脸重建</span>等核心算法SDK及行业解决方案规划与迭代，推动AI视觉能力在全球多个行业的商业化落地。</li>
+                        <li>规划智能 <span class="highlight-blue">3D人体重建解决方案</span>：用户旋转一周即可获取高精度人体三维模型、身体围度、体态分析及体成分分析结果，已应用于健身、美体、数字人等场景，助力客户提升销售转化率。</li>
+                        <li>定义并迭代算法SDK：人体骨骼识别算法可实时输出 <span class="highlight-blue">21个人体骨骼点</span>；人脸重建算法可在 <span class="highlight-blue">1分钟内</span>生成三维模型；人体重建算法支持 CPU+单/双相机+转盘高精度重建。</li>
+                        <li>推动天使客户交付首单、小批量复制行业龙头客户，覆盖服装定制、医疗、医美、AR/VR、互动娱乐等多个行业，沉淀软硬件AI方案商业化标准路径及关键模板，赋能产品线。</li>
+                    </ul>
+                </div>
+                
+                <!-- Job 3 -->
+                <div class="job-item">
+                    <div class="job-header">
+                        商汤科技
+                        <span class="job-time-loc">2020.07 - 2022.09 &nbsp; 深圳</span>
+                    </div>
+                    <div class="job-sub-header">产品经理 | 智慧城市与商业事业群-企业业务产品线</div>
+                    <ul class="job-desc">
+                        <li>主责智慧地产、物业板块成熟 SaaS 产品迭代与创新孵化，负责 <span class="highlight-blue">年营收近2亿元</span>的成熟期产品持续优化。</li>
+                        <li><span class="highlight-blue">SenseRealty 渠道风控 & 智能识客方案</span>：全国覆盖 <span class="highlight-blue">2000家售楼处</span>，在岗期间支撑部门销售业绩 <span class="highlight-blue">翻倍</span>；落地融创地产多个标杆销售中心。</li>
+                        <li>负责智能调度、智慧班车、员工端APP、C端APP、广告营销、福利分配等模块产品规划与设计；配合 <span class="highlight-blue">Top50</span>地产客户完成定制化需求与落地交付。</li>
+                    </ul>
+                </div>
+                
+                <div class="section-title">📊 代表项目 SELECTED PROJECTS</div>
+                <table class="project-table">
+                    <tr>
+                        <td class="project-card">
+                            <div class="project-card-title">01 比亚迪智驾攻坚及极致成本方案</div>
+                            <div class="project-card-time">2024.02 - 2024.04</div>
+                            <ul class="project-card-desc">
+                                <li>主责海狮 07 量产突围，建立日清机制快速迭代，保障 330 节点顺利 SOP。</li>
+                                <li>对标拆解行业 10+ 主流智驾方案硬件成本，主导极致成本控制方案规划。</li>
+                            </ul>
+                        </td>
+                        <td class="project-card">
+                            <div class="project-card-title">02 商汤 SenseRealty 智慧地产方案</div>
+                            <div class="project-card-time">2020.07 - 2022.09</div>
+                            <ul class="project-card-desc">
+                                <li>主导风控与识客模块，落地全国超 2000 家案场，支撑销售业绩翻倍。</li>
+                                <li>配合 Top50 地产集团完成班车及调度等核心业务模块交付与深度定制。</li>
+                            </ul>
+                        </td>
+                        <td class="project-card">
+                            <div class="project-card-title">03 智能3D人体重建解决方案</div>
+                            <div class="project-card-time">2022.11 - 2023.12</div>
+                            <ul class="project-card-desc">
+                                <li>打造 1 分钟一键 3D 重建算法 SDK，支持多相机与高精度体态、围度测量。</li>
+                                <li>完成天使客户标杆交付并规模复制，成功赋能美体、健身及数字人生态。</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                
+                <div class="section-title">🎓 教育背景 EDUCATION</div>
+                <div class="edu-item">
+                    <div class="edu-row">
+                        <strong>西安电子科技大学</strong> | 微电子科学与工程 (本科) | 微电子学院
+                        <span class="job-time-loc">2016.08 - 2020.07 &nbsp; 西安</span>
+                    </div>
+                    <div style="font-size: 8.5pt; color: #666; margin-top: 4px;">在校创业经历：为之互联信息科技有限公司，校企合作赢利</div>
+                </div>
+                
+            </td>
+            
+            <!-- Right Column -->
+            <td class="right-col">
+                
+                <div class="right-section-title">🛠️ 核心能力 CORE COMPETENCIES</div>
+                <div class="competency-item">
+                    <div class="competency-label">AI 解决方案设计</div>
+                    <div class="competency-bar-container"><div class="competency-bar" style="width: 95%;"></div></div>
+                </div>
+                <div class="competency-item">
+                    <div class="competency-label">产品战略与规划</div>
+                    <div class="competency-bar-container"><div class="competency-bar" style="width: 90%;"></div></div>
+                </div>
+                <div class="competency-item">
+                    <div class="competency-label">需求分析与方案设计</div>
+                    <div class="competency-bar-container"><div class="competency-bar" style="width: 95%;"></div></div>
+                </div>
+                <div class="competency-item">
+                    <div class="competency-label">AI 商业化落地</div>
+                    <div class="competency-bar-container"><div class="competency-bar" style="width: 90%;"></div></div>
+                </div>
+                <div class="competency-item">
+                    <div class="competency-label">跨团队协同与项目管理<br>客户沟通与交付管理</div>
+                    <div class="competency-bar-container" style="margin-top: -10px;"><div class="competency-bar" style="width: 88%;"></div></div>
+                </div>
+                <div class="competency-item" style="margin-top: 5px;">
+                    <div class="competency-label">行业研究与竞品分析</div>
+                    <div class="competency-bar-container"><div class="competency-bar" style="width: 92%;"></div></div>
+                </div>
+                <div class="competency-item">
+                    <div class="competency-label">数据驱动决策</div>
+                    <div class="competency-bar-container"><div class="competency-bar" style="width: 85%;"></div></div>
+                </div>
+                
+                <div class="right-section-title">💻 技术与工具 TECH & TOOLS</div>
+                
+                <div class="tool-category">AI 趋势研究:</div>
+                <div>
+                    <span class="tool-tag">LLM 应用生态</span>
+                    <span class="tool-tag">RAG 知识库</span>
+                    <span class="tool-tag">Agent 工作流</span>
+                </div>
+                
+                <div class="tool-category">AI 工具实践:</div>
+                <div>
+                    <span class="tool-tag">Codex 辅助开发</span>
+                    <span class="tool-tag">AI 内容生产工具</span>
+                </div>
+                
+                <div class="tool-category">产品与数据工具:</div>
+                <div>
+                    <span class="tool-tag">Axure</span>
+                    <span class="tool-tag">PRD</span>
+                    <span class="tool-tag">Xmind</span>
+                    <span class="tool-tag">Excel</span>
+                    <span class="tool-tag">Power BI</span>
+                    <span class="tool-tag">SQL</span>
+                    <span class="tool-tag">Python (基础)</span>
+                </div>
+                
+                <div class="right-section-title">🌐 行业领域 INDUSTRY DOMAIN</div>
+                <div class="domain-item"><span class="domain-icon">🚗</span> 智能汽车 / 自动驾驶</div>
+                <div class="domain-item"><span class="domain-icon">👁️</span> 计算机视觉 / 3D 视觉</div>
+                <div class="domain-item"><span class="domain-icon">🏢</span> 智慧城市 / 物业 / 地产</div>
+                <div class="domain-item"><span class="domain-icon">🤖</span> 机器人 / 具身智能</div>
+                <div class="domain-item"><span class="domain-icon">💼</span> 企业级 AI 应用</div>
+                
+                <div class="right-section-title">👤 个人资产 PERSONAL ASSETS</div>
+                <div class="asset-item">
+                    <div class="asset-label">🔗 个人网站：</div>
+                    <div class="asset-value">3110911931-arch.github.io/merlin</div>
+                </div>
+                <div class="asset-item">
+                    <div class="asset-label">📧 邮箱:</div>
+                    <div class="asset-text">3110911931@qq.com</div>
+                </div>
+                <div class="asset-item">
+                    <div class="asset-label">✨ 期待机会:</div>
+                    <div class="asset-text">AI Solution / AI Strategy / Enterprise AI / AI Business</div>
+                </div>
+                
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
