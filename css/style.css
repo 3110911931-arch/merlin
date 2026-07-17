@@ -448,3 +448,32 @@ footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--bor
   color: var(--text-muted);
   font-size: 15px;
 }
+
+/* ---- Thought Summary Toggle ---- */
+.thought-summary-toggle {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--accent);
+  cursor: pointer;
+  margin-top: 6px;
+  font-weight: 500;
+  user-select: none;
+}
+
+.thought-summary-toggle:hover {
+  color: var(--primary-light);
+}
+
+.thought-item-summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.thought-item-summary.expanded {
+  -webkit-line-clamp: unset;
+}

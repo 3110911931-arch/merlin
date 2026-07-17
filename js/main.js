@@ -98,7 +98,8 @@ function renderThoughts() {
         + "<span class=\"thought-item-date\">" + item.date + "</span>"
         + "</div>"
         + "<div class=\"thought-item-title\">" + item.title + "</div>"
-        + "<div class=\"thought-item-summary\">" + item.summary + "</div>"
+        + "<div class=\"thought-item-summary\" id=\"ts-" + item.id + "\">" + item.summary + "</div>"
+        + "<span class=\"thought-summary-toggle\" onclick=\"event.stopPropagation();toggleSummary(" + item.id + ")\">展开</span>"
         + "</div>"
         + actionHtml
         + "</div>";
@@ -110,6 +111,13 @@ function renderThoughts() {
   renderPagination(totalPages, filtered.length);
 }
 
+function toggleSummary(id) {
+  var el = document.getElementById("ts-" + id);
+  var btn = el.nextElementSibling;
+  el.classList.toggle("expanded");
+  btn.textContent = el.classList.contains("expanded") ? "收起" : "展开";
+}
+
 function renderPagination(totalPages, totalItems) {
   var pagEl = document.getElementById("thoughtPagination");
   if (totalPages <= 1) {
@@ -118,7 +126,6 @@ function renderPagination(totalPages, totalItems) {
   }
 
   var html = "";
-  // Prev
   html += "<button class=\"page-btn\" onclick=\"goToPage(" + (currentPage - 1) + ")\"" + (currentPage <= 1 ? " disabled" : "") + ">‹ 上一页</button>";
 
   for (var i = 1; i <= totalPages; i++) {
@@ -140,7 +147,6 @@ function filterThoughts(filter) {
   currentFilter = filter;
   currentPage = 1;
 
-  // Update filter buttons
   document.querySelectorAll(".thought-filter").forEach(function(btn) {
     btn.classList.toggle("active", btn.getAttribute("data-filter") === filter);
   });
@@ -170,13 +176,11 @@ function closeThoughtModal() {
   document.body.style.overflow = "";
 }
 
-// Close modal on background click
 document.addEventListener("click", function(e) {
   var modal = document.getElementById("thoughtModal");
   if (e.target === modal) closeThoughtModal();
 });
 
-// Close modal on Escape
 document.addEventListener("keydown", function(e) {
   if (e.key === "Escape") closeThoughtModal();
 });
