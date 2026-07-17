@@ -19,6 +19,7 @@
         <li><a href="#about">关于</a></li>
         <li><a href="#experience">经历</a></li>
         <li><a href="#projects">项目</a></li>
+        <li><a href="#thoughts">思考</a></li>
         <li><a href="#skills">技能</a></li>
         <li><a href="#contact">联系</a></li>
       </ul>
@@ -169,7 +170,7 @@
           <div class="project-details">
             <div class="project-details-inner">
               <h4>核心工作</h4>
-              <ul><li>主导渠道风控与智能识客模块产品规划与设计</li><li>覆盖全国2000+售楼处，支撑部门销售业绩翻倍</li><li>配合Top50地产集团完成班车及调度等核心业务模块交付与深度定制</li><li>落地融创地产多个标杆项目</li></ul>
+              <ul><li>主导渠道风控与智能识客模块产品规划与设计</li><li>全国覆盖2000+售楼处，支撑部门销售业绩翻倍</li><li>配合Top50地产集团完成班车及调度等核心业务模块交付与深度定制</li><li>落地融创地产多个标杆项目</li></ul>
             </div>
           </div>
           <div class="project-expand-hint"><span>查看详情</span><span class="arrow">↓</span></div>
@@ -193,7 +194,27 @@
     </div>
   </section>
 
-  <section id="skills" style="background:var(--white);">
+  <!-- Thoughts Section -->
+  <section id="thoughts" style="background:var(--white);">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>思考</h2>
+        <p>关于AI产品的一些记录与分享</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="thought-filters reveal">
+        <button class="thought-filter active" data-filter="all" onclick="filterThoughts('all')">全部</button>
+        <button class="thought-filter" data-filter="video" onclick="filterThoughts('video')">视频</button>
+        <button class="thought-filter" data-filter="article" onclick="filterThoughts('article')">文章</button>
+      </div>
+
+      <div class="thought-list" id="thoughtList"></div>
+      <div class="thought-pagination" id="thoughtPagination"></div>
+    </div>
+  </section>
+
+  <section id="skills">
     <div class="container">
       <div class="section-header reveal">
         <h2>技能与专长</h2>
@@ -286,7 +307,7 @@
     </div>
   </section>
 
-  <section id="education">
+  <section id="education" style="background:var(--white);">
     <div class="container">
       <div class="section-header reveal">
         <h2>教育</h2>
@@ -331,7 +352,18 @@
     <div class="container"><p>&copy; 2025 马林 Merlin</p></div>
   </footer>
 
+  <!-- Toast -->
   <div class="toast" id="toast"></div>
+
+  <!-- Thoughts Modal -->
+  <div class="thought-modal" id="thoughtModal" onclick="if(event.target===this)closeThoughtModal()">
+    <div class="thought-modal-content">
+      <button class="thought-modal-close" onclick="closeThoughtModal()">&times;</button>
+      <div class="thought-modal-iframe" id="thoughtModalIframe"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
