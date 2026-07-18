@@ -563,7 +563,7 @@ footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--bor
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), #7C3AED);
+  background: linear-gradient(90deg, var(--accent), var(--indigo));
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -606,7 +606,7 @@ footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--bor
 
 .company-badge.byd { background: linear-gradient(135deg, #1E3A5F, #2A5A8F); }
 .company-badge.orbbec { background: linear-gradient(135deg, #0D9488, #14B8A6); }
-.company-badge.sensetime { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
+.company-badge.sensetime { background: linear-gradient(135deg, #2563EB, #3B82F6); }
 .company-badge.edu { background: linear-gradient(135deg, #DC2626, #EF4444); }
 
 .timeline-company {
@@ -751,10 +751,10 @@ footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--bor
 :root {
   --primary: #0F172A;
   --primary-light: #1E293B;
-  --accent: #7C3AED;
-  --accent-light: #A78BFA;
+  --accent: #3B82F6;
+  --accent-light: #60A5FA;
   --accent-subtle: rgba(124,58,237,0.06);
-  --indigo: #6366F1;
+  --indigo: #2563EB;
   --cyan: #0891B2;
   --bg: #F8FAFC;
   --white: #FFFFFF;
@@ -1221,3 +1221,74 @@ section:nth-child(even) {
   opacity: 0;
   pointer-events: none;
 }
+
+/* ============================================
+   Color Correction: Blue Accent (replaces Purple)
+   ============================================ */
+:root {
+  --primary: #0F172A;
+  --primary-light: #1E293B;
+  --accent: #3B82F6;
+  --accent-light: #60A5FA;
+  --accent-subtle: rgba(59,130,246,0.06);
+  --indigo: #2563EB;
+  --cyan: #0891B2;
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --border: #E2E8F0;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-hover: 0 8px 30px -8px rgba(59,130,246,0.15), 0 4px 16px -4px rgba(0,0,0,0.08);
+  --nav-height: 64px;
+  --section-gap: 120px;
+}
+
+/* ---- Gradient Mesh Background (Hero) ---- */
+.hero {
+  background: 
+    radial-gradient(ellipse 80% 60% at 0% 50%, rgba(59,130,246,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 60% at 100% 50%, rgba(37,99,235,0.04) 0%, transparent 70%),
+    linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 50%, #F8FAFC 100%);
+}
+
+/* ---- Animated Gradient Orbs ---- */
+.hero::before {
+  background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
+}
+
+.hero::after {
+  background: radial-gradient(circle, rgba(37,99,235,0.05) 0%, transparent 70%);
+}
+
+/* ---- Parallax Layers ---- */
+.bg-parallax-layer:nth-child(1) {
+  background: radial-gradient(circle, rgba(59,130,246,0.04) 0%, transparent 70%);
+}
+
+.bg-parallax-layer:nth-child(2) {
+  background: radial-gradient(circle, rgba(37,99,235,0.03) 0%, transparent 70%);
+}
+
+.bg-parallax-layer:nth-child(3) {
+  background: radial-gradient(circle, rgba(8,145,178,0.03) 0%, transparent 70%);
+}
+
+/* ---- Scroll Progress Bar ---- */
+.scroll-progress {
+  background: linear-gradient(90deg, #3B82F6, #2563EB, #0891B2);
+}
+
+/* ---- Section Dividers ---- */
+#experience::before, #skills::before, #education::before {
+  background: linear-gradient(90deg, transparent, rgba(59,130,246,0.15), transparent);
+}
+
+/* ---- Highlight Card Title ---- */
+.highlight-card-title {
+  color: var(--accent);
+}
+
