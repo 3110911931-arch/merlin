@@ -203,3 +203,33 @@ var revealObserver = new IntersectionObserver(function(entries) {
 document.querySelectorAll(".reveal").forEach(function(el) {
   revealObserver.observe(el);
 });
+
+// ---- Scroll Progress Bar & Parallax ----
+var progressBar = document.getElementById("scrollProgress");
+var parallaxLayers = document.querySelectorAll(".bg-parallax-layer");
+var scrollIndicator = document.querySelector(".scroll-indicator");
+
+function updateScrollEffects() {
+  var scrollY = window.scrollY;
+  var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  var progress = docHeight > 0 ? Math.min(scrollY / docHeight, 1) : 0;
+
+  // Update progress bar
+  if (progressBar) progressBar.style.width = (progress * 100) + "%";
+
+  // Parallax: layers move at different speeds
+  parallaxLayers.forEach(function(layer, i) {
+    var speed = [0.06, 0.04, 0.08][i] || 0.05;
+    var y = scrollY * speed;
+    layer.style.transform = "translateY(" + y + "px)";
+  });
+
+  // Hide scroll indicator after scrolling past hero
+  if (scrollIndicator) {
+    scrollIndicator.classList.toggle("hidden", scrollY > 200);
+  }
+
+  requestAnimationFrame(updateScrollEffects);
+}
+
+requestAnimationFrame(updateScrollEffects);

@@ -1135,3 +1135,89 @@ footer {
 .scroll-indicator .mouse-dot {
   background: var(--accent);
 }
+
+/* ============================================
+   Scroll-Triggered Effects
+   ============================================ */
+
+/* ---- Scroll Progress Bar ---- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--indigo), var(--cyan));
+  z-index: 9999;
+  transition: width 0.05s linear;
+  pointer-events: none;
+}
+
+/* ---- Parallax Background Layer ---- */
+.bg-parallax {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-parallax-layer {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.bg-parallax-layer:nth-child(1) {
+  width: 600px;
+  height: 600px;
+  top: -100px;
+  right: -200px;
+  background: radial-gradient(circle, rgba(124,58,237,0.04) 0%, transparent 70%);
+}
+
+.bg-parallax-layer:nth-child(2) {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  left: -150px;
+  background: radial-gradient(circle, rgba(99,102,241,0.03) 0%, transparent 70%);
+}
+
+.bg-parallax-layer:nth-child(3) {
+  width: 300px;
+  height: 300px;
+  top: 40%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(8,145,178,0.03) 0%, transparent 70%);
+}
+
+/* ---- Section Color Transition ---- */
+section {
+  transition: background-color 0.8s ease;
+}
+
+section:nth-child(even) {
+  background-color: var(--bg);
+}
+
+/* ---- Hero Orbs Animation Refinement ---- */
+.hero::before,
+.hero::after {
+  will-change: transform;
+}
+
+/* ---- Scroll Indicator Enhancement ---- */
+.scroll-indicator {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.scroll-indicator.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
