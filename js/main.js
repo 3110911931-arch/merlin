@@ -189,3 +189,17 @@ document.addEventListener("keydown", function(e) {
 if (typeof thoughtsData !== "undefined") {
   renderThoughts();
 }
+
+// ---- Staggered Reveal ----
+var revealObserver = new IntersectionObserver(function(entries) {
+  var visible = entries.filter(function(e) { return e.isIntersecting; });
+  visible.forEach(function(entry, i) {
+    setTimeout(function() {
+      entry.target.classList.add("visible");
+    }, i * 100);
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(".reveal").forEach(function(el) {
+  revealObserver.observe(el);
+});
