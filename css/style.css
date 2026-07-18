@@ -742,3 +742,396 @@ footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--bor
   border-radius: 12px;
   border: 1px solid rgba(226,232,240,0.8);
 }
+
+/* ============================================
+   UI/UX Pro Max — AI Era Design System
+   ============================================ */
+
+/* ---- AI-Native Color Palette ---- */
+:root {
+  --primary: #0F172A;
+  --primary-light: #1E293B;
+  --accent: #7C3AED;
+  --accent-light: #A78BFA;
+  --accent-subtle: rgba(124,58,237,0.06);
+  --indigo: #6366F1;
+  --cyan: #0891B2;
+  --bg: #F8FAFC;
+  --white: #FFFFFF;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --border: #E2E8F0;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-hover: 0 8px 30px -8px rgba(124,58,237,0.15), 0 4px 16px -4px rgba(0,0,0,0.08);
+  --nav-height: 64px;
+  --section-gap: 120px;
+}
+
+/* ---- Gradient Mesh Background (Hero) ---- */
+.hero {
+  background: 
+    radial-gradient(ellipse 80% 60% at 0% 50%, rgba(124,58,237,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 60% at 100% 50%, rgba(99,102,241,0.04) 0%, transparent 70%),
+    linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 50%, #F8FAFC 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- Animated Gradient Orbs ---- */
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: -200px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbFloat 12s ease-in-out infinite;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: -150px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(99,102,241,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbFloat 15s ease-in-out infinite reverse;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+/* ---- Hero Badge Enhancement ---- */
+.hero-badge {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid rgba(124,58,237,0.12);
+  backdrop-filter: blur(4px);
+  padding: 8px 20px;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+}
+
+/* ---- Hero Tags Enhancement ---- */
+.hero-tag {
+  background: rgba(124,58,237,0.06);
+  color: var(--accent);
+  border: 1px solid rgba(124,58,237,0.1);
+  font-size: 13px;
+  padding: 5px 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-tag:hover {
+  background: rgba(124,58,237,0.1);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ---- Section Headers with Accent ---- */
+.section-header .section-divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--indigo));
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+
+/* ---- Card Redesign ---- */
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--indigo));
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover {
+  border-color: rgba(124,58,237,0.2);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.project-tag {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.4px;
+}
+
+/* ---- Timeline Enhancement ---- */
+.timeline::before {
+  background: linear-gradient(180deg, var(--accent), var(--indigo), var(--border));
+  opacity: 0.5;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(124,58,237,0.15);
+  border: none;
+  transition: all 0.3s;
+}
+
+.timeline-item:hover .timeline-dot {
+  box-shadow: 0 0 0 6px rgba(124,58,237,0.25);
+  transform: scale(1.15);
+}
+
+.timeline-date {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Competency Bars ---- */
+.competency-bar {
+  background: linear-gradient(90deg, var(--accent), var(--indigo));
+  border-radius: 4px;
+}
+
+.competency-bar-bg {
+  background: rgba(124,58,237,0.08);
+  border-radius: 4px;
+}
+
+/* ---- Tool Tags ---- */
+.tool-tag {
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tool-tag:hover {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ---- Contact Items ---- */
+.contact-item {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-item:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+/* ---- Highlight Cards ---- */
+.highlight-card {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.highlight-card:hover {
+  border-color: rgba(124,58,237,0.2);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.highlight-card-title {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+
+/* ---- Navigation Refinement ---- */
+.nav {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226,232,240,0.5);
+}
+
+.nav.scrolled {
+  background: rgba(255,255,255,0.88);
+  border-bottom-color: var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-links a.active::after {
+  background: var(--accent);
+  width: 100%;
+}
+
+/* ---- Skills Section Headings ---- */
+.skills-section h3 {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* ---- Personal Assets Card ---- */
+.personal-assets {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--white);
+}
+
+.personal-assets h3 {
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ---- Platform Accent Color ---- */
+::selection {
+  background: rgba(124,58,237,0.2);
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-light);
+}
+
+/* ---- Thought Filter Active ---- */
+.thought-filter.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.thought-filter:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---- Thought Item ---- */
+.thought-item {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.thought-item:hover {
+  border-color: rgba(124,58,237,0.2);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.thought-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent), var(--indigo));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.thought-item:hover::before {
+  opacity: 1;
+}
+
+/* ---- Education Card ---- */
+.education-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+/* ---- Page Number Active ---- */
+.page-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---- Toast ---- */
+.toast {
+  background: var(--primary);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* ---- Footer ---- */
+footer {
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+
+/* ---- Section Background Alternation ---- */
+#experience, #skills, #education {
+  position: relative;
+}
+
+/* ---- Section Divider ---- */
+#experience::before, #skills::before, #education::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124,58,237,0.15), transparent);
+}
+
+/* ---- Reveal Animation Refinement ---- */
+.reveal {
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---- Navigation Link Hover ---- */
+.nav-links a::after {
+  background: var(--accent);
+}
+
+/* ---- Scroll Indicator ---- */
+.scroll-indicator .mouse {
+  border-color: var(--border);
+}
+
+.scroll-indicator .mouse-dot {
+  background: var(--accent);
+}
