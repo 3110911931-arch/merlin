@@ -1,5 +1,13 @@
 ﻿const thoughtsData = [
   {
+    id: 9,
+    type: "article",
+    title: "利用Codex实现个/他人数字分身（人格蒸馏）",
+    summary: "私人可控的人格分身产品（本地化部署），探索AI时代个人数字资产的新形态。",
+    link: "https://mp.weixin.qq.com/s/7rLXAFLe7ZMzjR32gR5y3g",
+    date: "2025-07"
+  },
+  {
     id: 8,
     type: "article",
     title: "投研视角下的码上飞公司",
