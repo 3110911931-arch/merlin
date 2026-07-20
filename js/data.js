@@ -1,5 +1,13 @@
 ﻿const thoughtsData = [
   {
+    id: 10,
+    type: "video",
+    title: "把个人蒸馏为数字分身的逻辑梳理",
+    summary: "每个人都可以赛博永生。",
+    embedUrl: "https://player.bilibili.com/player.html?bvid=BV1gzKr6JEJ6",
+    date: "2025-07"
+  },
+  {
     id: 9,
     type: "article",
     title: "利用Codex实现个/他人数字分身（人格蒸馏）",
@@ -72,4 +80,5 @@
     date: "2025-02"
   }
 ];
+
 
