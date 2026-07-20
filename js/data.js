@@ -1,5 +1,13 @@
 ﻿const thoughtsData = [
   {
+    id: 11,
+    type: "article",
+    title: "诺亦腾机器人及其母公司分析报告",
+    summary: "昨天刚写到数据资产的重要性，今天就来了个做数据资产的公司，巧了。",
+    link: "https://mp.weixin.qq.com/s/ysaUmqCZA4o52VVQggHxag",
+    date: "2026-07"
+  },
+  {
     id: 10,
     type: "video",
     title: "把个人蒸馏为数字分身的逻辑梳理",
@@ -64,3 +72,4 @@
     date: "2026-02"
   }
 ];
+
